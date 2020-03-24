@@ -11,7 +11,7 @@ html {
 body {
     background-color: #95a5b4;
     margin: 0 auto;
-    padding: 1%
+    padding: 1%;
 }
 
 .title {
@@ -34,7 +34,7 @@ body {
     font-family: 'Didact Gothic', sans-serif;
     width: 20%;
     text-align: center;
-    background-color:#ebc163;
+    background-color: #ebc163;
     padding: 1%;
     border-radius: 5%;
     border: 5px solid black;
@@ -49,5 +49,5 @@ body {
 .cardContent {
     font-size: 1.5rem;
     margin: 1px;
-    padding-bottom: 2%
+    padding-bottom: 2%;
 }
