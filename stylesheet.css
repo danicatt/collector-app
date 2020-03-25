@@ -4,11 +4,11 @@
 
 html {
     font-size: 62.5%;
-    font-family: helvetica;
 }
 
 body {
     background-color: #95a5b4;
+    font-family: helvetica;
     margin: 0 auto;
     padding: 1%;
 }
