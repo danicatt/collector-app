@@ -16,7 +16,7 @@ function loopCartoons($cartoonArray){
         $return .= "<p class='cardContent'>" . "From". ': '. $character['tvshow']. "</p>";
         $return .= "<p class='cardContent'>" . "Species". ': '. $character['species']. "</p>";
         $return .= "<p class='cardContent'>" . "Catchphrase". ': '. $character['catchphase']. "</p>";
-        $return .= "<p class='cardContent'>" . $character['image']. "</p>";
+        $return .= "<img src=" . $character['image'].">";
         $return .= "</div>";
     }
         return $return;
