@@ -5,13 +5,13 @@ function getDatabase(): PDO{
     return $db;
 }
 
-function queryDatabase(PDO $db){
+function getCharacters(PDO $db): array{
     $query = $db->query('SELECT `name`, `species`, `tvshow`, `catchphase`, `image`  FROM `cartoonChars`;');
     $cartoonArray = $query->fetchAll();
     return $cartoonArray;
 }
 
-function loopCartoons(array $cartoonArray): string{
+function displayCartoons(array $cartoonArray): string{
     $return = '';
     foreach ($cartoonArray as $character){
         $return .= "<div class='eachCharacter'>";

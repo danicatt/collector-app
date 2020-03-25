@@ -1,7 +1,7 @@
 <?php
 require('functions.php');
 $db = getDatabase();
-$cartoonArray = queryDatabase($db);
+$cartoonArray = getCharacters($db);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ $cartoonArray = queryDatabase($db);
         <main>
             <div class="collectionCards">
                 <?php
-                echo loopCartoons($cartoonArray);
+                echo displayCartoons($cartoonArray);
                 ?>
             </div>
         </main>
