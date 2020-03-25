@@ -1,5 +1,4 @@
 <?php
-
 function getDatabase(): PDO{
     $db = new PDO('mysql:host=DB;dbname=collectorApp', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
