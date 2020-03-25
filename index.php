@@ -1,5 +1,7 @@
 <?php
 require('functions.php');
+$db = getDatabase();
+$cartoonArray = queryDatabase($db);
 ?>
 
 <!DOCTYPE html>
