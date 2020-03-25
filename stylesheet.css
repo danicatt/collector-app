@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #95a5b4;
+    font-family: helvetica;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+.title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Fredoka One', cursive;
+    padding-bottom: 2%;
+}
+
+.collectionCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 2%;
+}
+
+.eachCharacter {
+    font-family: 'Didact Gothic', sans-serif;
+    width: 20%;
+    text-align: center;
+    background-color: #ebc163;
+    padding: 1%;
+    border-radius: 5%;
+    border: 5px solid black;
+    margin: 1%;
+}
+
+.charName {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.cardContent {
+    font-size: 1.5rem;
+    margin: 1px;
+    padding-bottom: 2%;
+}
