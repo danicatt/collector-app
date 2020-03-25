@@ -1,14 +1,17 @@
 <?php
+function getDatabase(): PDO{
+    $db = new PDO('mysql:host=DB;dbname=collectorApp', 'root', 'password');
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    return $db;
+}
 
-$db = new PDO('mysql:host=DB;dbname=collectorApp', 'root', 'password');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+function queryDatabase(PDO $db){
+    $query = $db->query('SELECT `name`, `species`, `tvshow`, `catchphase`, `image`  FROM `cartoonChars`;');
+    $cartoonArray = $query->fetchAll();
+    return $cartoonArray;
+}
 
-
-$query = $db->query('SELECT `name`, `species`, `tvshow`, `catchphase`, `image`  FROM `cartoonChars`;');
-$cartoonArray = $query->fetchAll();
-
-
-function loopCartoons($cartoonArray){
+function loopCartoons(array $cartoonArray): string{
     $return = '';
     foreach ($cartoonArray as $character){
         $return .= "<div class='eachCharacter'>";
