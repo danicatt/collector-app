@@ -14,13 +14,21 @@ function getCharacters(PDO $db): array{
 function displayCartoons(array $cartoonArray): string{
     $return = '';
     foreach ($cartoonArray as $character){
-        $return .= "<div class='eachCharacter'>";
-        $return .= "<h2 class='charName'>" . $character['name'] . "</h2>";
-        $return .= "<p class='cardContent'>" . "From". ': '. $character['tvshow']. "</p>";
-        $return .= "<p class='cardContent'>" . "Species". ': '. $character['species']. "</p>";
-        $return .= "<p class='cardContent'>" . "Catchphrase". ': '. $character['catchphase']. "</p>";
-        $return .= "<img src=" . $character['image'].">";
-        $return .= "</div>";
+        if (
+            array_key_exists('name', $character) && 
+            array_key_exists('tvshow', $character) && 
+            array_key_exists('species', $character) && 
+            array_key_exists('catchphase', $character) && 
+            array_key_exists('image', $character)
+        ){
+            $return .= "<div class='eachCharacter'>";
+            $return .= "<h2 class='charName'>" . $character['name'] . "</h2>";
+            $return .= "<p class='cardContent'>" . "From". ': '. $character['tvshow']. "</p>";
+            $return .= "<p class='cardContent'>" . "Species". ': '. $character['species']. "</p>";
+            $return .= "<p class='cardContent'>" . "Catchphrase". ': '. $character['catchphase']. "</p>";
+            $return .= "<img src=" . $character['image'].">";
+            $return .= "</div>";
+        }
     }
         return $return;
 }

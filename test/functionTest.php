@@ -16,8 +16,10 @@ class functionTest extends TestCase {
         displayCartoons('test');
     }
 
-    public function testErrorwrongArrKey(){
-        $this->expectException(TypeError::class);
-        displayCartoons(6);
+    public function testErrordisplayCartoons() {
+        $expected = '';
+        $actual = displayCartoons([["notname" => "Test Name", "notspecies" => "Test Species", "nottvshow" => "Test Show", "notcatchphase" => "Test Phrase", "notimage" => "Test Image"]]);
+
+        $this->assertSame($expected, $actual);
     }
 }
