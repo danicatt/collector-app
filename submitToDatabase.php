@@ -4,10 +4,10 @@ if(isset($_POST["submit"])) {
     $username = 'root';
     $password = 'password';
 
-    try {
+
         $db = new PDO('mysql:host=DB;dbname=collectorApp', $username, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO `cartoonChars` (`name`, `tvshow`, `species`, `catchphase`, `image`) VALUES ('".$_POST["name"]."','".$_POST["tvshow"]."','".$_POST["species"]."','".$_POST["catchphase"]."','".$_POST["image"]."')";
+        $sql = "INSERT INTO `cartoonChars` (`name`, `tvshow`, `species`, `catchphase`) VALUES ('".$_POST["name"]."','".$_POST["tvshow"]."','".$_POST["species"]."','".$_POST["catchphase"]."')";
         if($db->query($sql)) {
             echo "New Record Inserted";
         }
@@ -17,8 +17,3 @@ if(isset($_POST["submit"])) {
 
         $db = null;
     }
-    catch(PDOException $e)
-    {
-        echo $e->getMessage();
-    }
-}
