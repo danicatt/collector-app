@@ -11,8 +11,6 @@ function getCharacters(PDO $db): array{
     return $cartoonArray;
 }
 
-
-
 function displayCartoons(array $cartoonArray): string{
     $return = '';
     foreach ($cartoonArray as $character){
@@ -36,18 +34,16 @@ function displayCartoons(array $cartoonArray): string{
 }
 
 function addCharsToDatabase(PDO $db, array $cartoonArray) {
-    $queryAdd = $db->prepare("INSERT INTO `cartoonArray` (`name`, `tvshow`, `species`, `catchphase`, `image`) VALUES (?, ?, ?, ?, ?)");
-    $newChar->execute([$cartoonArray["name"], $cartoonArray["tvshow"], $cartoonArray["species"], $cartoonArray["catchphase"], $cartoonArray["image"]]);
-    return $newChar;
+    $queryAdd = $db->prepare("INSERT INTO `cartoonChars` (`name`, `tvshow`, `species`, `catchphase`, `image`) VALUES (?, ?, ?, ?, ?)");
+    $result = $queryAdd->execute([$cartoonArray["name"], $cartoonArray["tvshow"], $cartoonArray["species"], $cartoonArray["catchphase"], $cartoonArray["image"]]);
+    return $result;
 }
 
-function validateInput($newChar){
+function validateInput($userData){
     if(
-        !empty($newChar['name']) &&
-        !empty($newChar['tvshow']) &&
-        !empty($newChar['species']) &&
-        !empty($newChar['catchphase']) &&
-        !empty($newChar['image'])
+        !empty($userData['name']) &&
+        !empty($userData['tvshow']) &&
+        !empty($userData['species'])
     ){
         return true;
     }

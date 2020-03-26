@@ -1,12 +1,14 @@
 <?php 
+
 require('functions.php');
 
 $db = getDatabase();
 
-if (validateInput($_GET)){
-    addCharsToDatabase($_GET, $db);
-    header ("Location: ../index.php");
+
+if (validateInput($_POST)){
+    addCharsToDatabase($db, $_POST);
+    header ("Location: index.php");
 }
     else {
-        header("Location: ../addCharForm.php");
+        header("Location: addCharForm.php");
 }
