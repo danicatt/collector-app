@@ -11,6 +11,8 @@ function getCharacters(PDO $db): array{
     return $cartoonArray;
 }
 
+
+
 function displayCartoons(array $cartoonArray): string{
     $return = '';
     foreach ($cartoonArray as $character){
@@ -31,4 +33,25 @@ function displayCartoons(array $cartoonArray): string{
         }
     }
         return $return;
+}
+
+function addCharsToDatabase(PDO $db, array $cartoonArray) {
+    $queryAdd = $db->prepare("INSERT INTO `cartoonArray` (`name`, `tvshow`, `species`, `catchphase`, `image`) VALUES (?, ?, ?, ?, ?)");
+    $newChar->execute([$cartoonArray["name"], $cartoonArray["tvshow"], $cartoonArray["species"], $cartoonArray["catchphase"], $cartoonArray["image"]]);
+    return $newChar;
+}
+
+function validateInput($newChar){
+    if(
+        !empty($newChar['name']) &&
+        !empty($newChar['tvshow']) &&
+        !empty($newChar['species']) &&
+        !empty($newChar['catchphase']) &&
+        !empty($newChar['image'])
+    ){
+        return true;
+    }
+    else {
+        return false;
+    }
 }

@@ -14,7 +14,7 @@
 </header>
 <div id="main">
     <h2 class="subheader">Let's get some details...</h1>
-    <form action="" method="post">
+    <form action="submitToDatabase.php" method="post">
         <div class=inputContainer>
             <label class="label">Character's name :</label>
             <input type="text" name="name" id="inputBox" required="required" placeholder="Their name"/><br /><br />
@@ -34,8 +34,4 @@
 </div>
 </body>
 </html>
-
-<?php
-include('submitToDatabase.php');
-?>
 
