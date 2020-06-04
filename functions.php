@@ -32,3 +32,22 @@ function displayCartoons(array $cartoonArray): string{
     }
         return $return;
 }
+
+function addCharsToDatabase(PDO $db, array $cartoonArray) {
+    $queryAdd = $db->prepare("INSERT INTO `cartoonChars` (`name`, `tvshow`, `species`, `catchphase`, `image`) VALUES (?, ?, ?, ?, ?)");
+    $result = $queryAdd->execute([$cartoonArray["name"], $cartoonArray["tvshow"], $cartoonArray["species"], $cartoonArray["catchphase"], $cartoonArray["image"]]);
+    return $result;
+}
+
+function validateInput($userData){
+    if(
+        !empty($userData['name']) &&
+        !empty($userData['tvshow']) &&
+        !empty($userData['species'])
+    ){
+        return true;
+    }
+    else {
+        return false;
+    }
+}

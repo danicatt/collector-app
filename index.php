@@ -13,6 +13,9 @@ $cartoonArray = getCharacters($db);
         <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Fredoka+One&display=swap" rel="stylesheet" />
     </head>
     <body>
+        <div> 
+            <a href="addCharForm.php"><button class="goToAddBtn">Add a new character</button></a>
+        </div>
         <div class="titleBar">
             <h1 class="title">Cartoon Character Collection</h1>
         </div>
